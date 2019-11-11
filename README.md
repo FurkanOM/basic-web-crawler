@@ -18,13 +18,13 @@ API running on 8080 port by default.
 
 ## API Methods
 
-### GET /
+### GET /
 
 Example: http://localhost:8080/
 
 Return of the crawler status object.
 
-### GET /storage
+### GET /storage
 
 Example: http://localhost:8080/storage
 
@@ -71,19 +71,19 @@ Example request:
         ]
     }
 
-### GET /stop
+### GET /stop
 
 Example: http://localhost:8080/stop
 
 This means that no new links will be added to the queue anymore and crawling will be stopped when the queue is drained.
 
-### GET /resetstatus
+### GET /resetstatus
 
 Example: http://localhost:8080/resetstatus
 
 This method can be used to initialize crawler status and delete search information from the last crawling operation. This does not affect the storage object.
 
-### GET /view
+### GET /view
 
 Example: http://localhost:8080/view?keywords=keyword1,keyword2,keyword3&hostname=example.com&order=1
 
