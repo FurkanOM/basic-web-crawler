@@ -1,7 +1,7 @@
 {
   "name": "basic-web-crawler",
   "version": "1.0.0",
-  "description": "Basic web crawler with API",
+  "description": "It's a very basic web crawler API implementation.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
