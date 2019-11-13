@@ -39,7 +39,7 @@ app.post("/crawler", (req, res) => {
     }
     const crawlerRequest = helpers.parseCrawlerRequest(req.body)
     if(!crawlerRequest){
-        res.status(500).json({err: "Crawling request couldn't be processed"})
+        res.status(500).json({err: "Crawling request couldn't be processed! Please check your request body!"})
     }else{
         crawler.start(crawlerRequest)
         res.json(crawler.status())
@@ -65,7 +65,7 @@ app.get("/view", (req, res) => {
     const hostname = req.query.hostname
     const order = req.query.order || 0
     if(!keywordString){
-        res.status(500).json({err: "Keywords param required! Usage => keywords=crawl,example"})
+        res.status(500).json({err: "keywords param required! Usage => keywords=crawl,example"})
         return
     }
     const keywords = keywordString.split(",")
@@ -87,7 +87,7 @@ app.get("/view", (req, res) => {
         if(data.foundKeywords.length > 0){
             res.send(data.html)
         }else{
-            res.status(500).json({err: "This page couldn't has searched keyword anymore"})
+            res.status(500).json({err: "This page doesn't have the keyword(s) anymore on this url: " + url})
         }
     })
     .catch(e => {
